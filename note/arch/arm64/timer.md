@@ -33,10 +33,13 @@ In this example, I will use CNTP as example.
    mov  x0, #1
    msr  CNTP_CTL_EL0, x0
    ```
-3. Once the interrupt is received, reconfigure the timer comparator value to wait for next tick
+3. Check GIC reference manuel to find out the interrupt ID for CNTP. In this example, GIC-400 is used and interrupt ID is 30  
+   https://developer.arm.com/documentation/ddi0471/b/functional-description/interrupt-inputs-to-the-gic-400/ppis?lang=en
+4. Once the interrupt is received, reconfigure the timer comparator value to wait for next tick
    ```C
    msr CNTP_TVAL_EL0, x0
    ```
 
 # Reference
 https://developer.arm.com/documentation/102379/0104
+https://developer.arm.com/documentation/ddi0471/b/functional-description/interrupt-inputs-to-the-gic-400/ppis?lang=en

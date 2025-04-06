@@ -227,10 +227,12 @@ In the example, I will demonstrate in EL1 only and using SP_EL1 for EL1
       ```C
         ldr	        x10, =trap_vector
         msr	        vbar_el1, x10
-        mrs	        x10, vbar_el1
       ```
 3. After above setting is well programed, the rest to do is just implementing el\${x}\_\${ht}\_\${regsize}\_\${label}\_handler. If it is going to handle IRQ, el1h_64_irq_handler must be implemented and usually GIC driver should be the next essential component to deal with the interrupt.
 
 # Reference
-https://developer.arm.com/documentation/102412/0103/Handling-exceptions/Taking-an-exception
+https://developer.arm.com/documentation/ddi0601/2024-12
+https://developer.arm.com/documentation/102412/0103
 https://krinkinmu.github.io/2021/01/10/aarch64-interrupt-handling.html
+https://blog.csdn.net/qq_38131812/article/details/130141118
+https://blog.csdn.net/sinat_32960911/article/details/127856639
